@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mprofile/mprofile_module/screens/bus_search.dart';
 import 'package:mprofile/mprofile_module/screens/main_screen.dart';
 
 class MainApp extends StatelessWidget {
@@ -12,8 +13,8 @@ class MainApp extends StatelessWidget {
         switch(settings.name){
           case "/":
           return MaterialPageRoute(builder: (_)=>MainScreen());
-          // case "/detail":
-          // return MaterialPageRoute(builder: (_)=>BookingScreen(),settings: settings);
+          case "/bussearch":
+          return MaterialPageRoute(builder: (_)=>BusSearch(),settings: settings);
           default:
             return MaterialPageRoute(builder: (_)=>Center(child:Text("No Screen")));
         }

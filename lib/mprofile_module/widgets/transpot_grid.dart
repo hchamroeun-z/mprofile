@@ -1,9 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mprofile/mprofile_module/notifier/home_notifier.dart';
+import 'package:mprofile/mprofile_module/screens/bus_search.dart';
 
-Widget transpotGrid(WidgetRef ref, TransportType selectedType) {
+Widget transpotGrid(BuildContext context,WidgetRef ref, TransportType selectedType) {
     final items = [
       {
         'type': TransportType.train,
@@ -38,7 +38,7 @@ Widget transpotGrid(WidgetRef ref, TransportType selectedType) {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.06),
+            color: Colors.black.withValues(alpha: 0.06),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -52,7 +52,10 @@ Widget transpotGrid(WidgetRef ref, TransportType selectedType) {
           final isNew = item['isNew'] as bool;
 
           return GestureDetector(
-            onTap: () => ref.read(homeNotifierProvider.notifier).selectTransport(type),
+           onTap: () {
+            ref.read(homeNotifierProvider.notifier).selectTransport(type);
+             Navigator.of(context).pushNamed('/bussearch',arguments: item);
+          },
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
