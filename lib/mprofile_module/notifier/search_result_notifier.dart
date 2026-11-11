@@ -64,6 +64,20 @@ class SearchResultNotifier extends Notifier<SearchResultState> {
           isDirect: true,
         ),
         const TripResult(
+          operatorName: 'E-Booking',
+          rating: '4.5',
+          departureTime: '06:30 am',
+          duration: '3h',
+          vehicleType: 'VIP VAN',
+          seatsLeft: 7,
+          price: 'USD 8.00',
+          originalPrice: '',
+          discountTag: '',
+          isFeatured: true,
+          isDirect: true,
+        ),
+        
+        const TripResult(
           operatorName: 'Kim Seng Express',
           rating: '4.7',
           departureTime: '08:00 am',

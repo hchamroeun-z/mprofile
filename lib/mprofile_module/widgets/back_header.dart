@@ -8,7 +8,7 @@ Widget backHeader(BuildContext context) {
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: NetworkImage(
-            'https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&fit=crop&w=1200&q=80',
+            'https://cdn.bookaway.com/media/files/660d746ced0816d0136cb391.webp?width=943&height=414&quality=60',
           ),
           fit: BoxFit.cover,
         ),

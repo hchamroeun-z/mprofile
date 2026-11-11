@@ -1,57 +1,91 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../models/special_offer.dart';
 
 Widget specialOffersCarousel() {
+    final offers = [
+      const SpecialOfferItem(
+        title: '20% OFF Phnom Penh Routes',
+        subtitle: 'Use code: PNH20 at checkout',
+        imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ-iYZfL1g-DRDp9VHlWFvX12PcP34Ow9ALeCQ0FRW4w&s',
+        discountCode: '20% OFF',
+      ),
+      const SpecialOfferItem(
+        title: 'Free VIP Lounge Access',
+        subtitle: 'Book any van to Siem Reap',
+        imageUrl: 'https://cdn.bookmebus.com/uploads/home_page_slide_show_ad/image/309/standard_IMG_20261013_155547_756.jpg',
+        discountCode: 'FREE VIP',
+      ),
+      const SpecialOfferItem(
+        title: 'Weekend Getaway Deal',
+        subtitle: 'Save big on round-trip tickets',
+        imageUrl: 'https://assets.bookmebus.com/assets/slides/bookmebus-app-promotion-738426df0204d4cc596e6b2980f5e3b1.png',
+        discountCode: 'SAVE \$5',
+      ),
+    ];
+
     return SizedBox(
-      height: 140,
+      height: 150,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: 3,
+        itemCount: offers.length,
         itemBuilder: (context, index) {
+          final offer = offers[index];
           return Container(
             width: 280,
             margin: const EdgeInsets.only(right: 12),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
-              image: const DecorationImage(
-                image: NetworkImage(
-                  'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=600&q=80',
-                ),
+              image: DecorationImage(
+                image: NetworkImage(offer.imageUrl),
                 fit: BoxFit.cover,
+                colorFilter: ColorFilter.mode(
+                  Colors.black.withValues(alpha: 0.35),
+                  BlendMode.darken,
+                ),
               ),
             ),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                gradient: LinearGradient(
-                  colors: [Colors.black.withValues(alpha: 0.6), Colors.transparent],
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                ),
-              ),
-              padding: const EdgeInsets.all(12),
-              alignment: Alignment.bottomLeft,
-              child: Row(
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    'Island Speed Ferry\nFrom \$5.00',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 13,
-                    ),
-                  ),
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: Colors.deepOrange,
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: const Text(
-                      'Book',
-                      style: TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.bold),
+                    child: Text(
+                      offer.discountCode,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 10,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        offer.title,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        offer.subtitle,
+                        style: const TextStyle(
+                          color: Colors.white70,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

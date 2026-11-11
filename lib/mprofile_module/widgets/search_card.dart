@@ -178,7 +178,7 @@ Widget searchCard(BuildContext context, WidgetRef ref, BusSearchState state) {
             height: 50,
             child: ElevatedButton(
               onPressed: () {
-                // Trigger search action
+                 Navigator.of(context).pushNamed('/searchresult');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.deepOrange,

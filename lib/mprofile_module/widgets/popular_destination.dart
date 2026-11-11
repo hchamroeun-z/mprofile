@@ -4,15 +4,15 @@ Widget popularDestinationsList() {
     final destinations = [
       {
         'city': 'Phnom Penh',
-        'image': 'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=400&q=80'
+        'image': 'https://pacifichotel.asia/wp-content/uploads/2024/08/palais-royal-du-cambodge-phnom-penh-scaled-1.jpg'
       },
       {
         'city': 'Kampot',
-        'image': 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80'
+        'image': 'https://www.flexibletourism.com/userfiles/thumbs/Seahorse.jpg'
       },
       {
         'city': 'Siem Reap',
-        'image': 'https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?auto=format&fit=crop&w=400&q=80'
+        'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU5a3kC603qd09fkFCH6D9XK-LHUMxyypzYc22y4kw74zRTIK0qTP7TKP5&s=10'
       },
     ];
 
