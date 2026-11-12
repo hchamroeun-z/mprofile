@@ -26,7 +26,7 @@ class MainScreen extends StatelessWidget {
             ),
           ),
           PersistentTabConfig(
-            screen: BookingScreen(),
+            screen: BookingsScreen(),
             item: ItemConfig(
               icon: Icon(Icons.book_online),
               title: "Bookings",
