@@ -85,7 +85,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
                     ),
                   ),
                   const SizedBox(height: 12),
-                  popularDestinationsList(),
+                  popularDestinationsList(context,ref),
                 ],
               ),
             ),

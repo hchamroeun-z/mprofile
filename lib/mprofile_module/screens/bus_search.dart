@@ -50,7 +50,7 @@ class BusSearch extends ConsumerWidget {
                     ),
                   ),
                   const SizedBox(height: 12),
-                  popularDestinationsList(),
+                  popularDestinationsList(context,ref),
                 ],
               ),
             ),

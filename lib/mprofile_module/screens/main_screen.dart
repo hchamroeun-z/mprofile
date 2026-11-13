@@ -59,7 +59,7 @@ class MainScreen extends StatelessWidget {
         navBarBuilder: (navBarConfig) => Style1BottomNavBar(
           navBarConfig: navBarConfig,
           navBarDecoration: NavBarDecoration(
-            // color: Theme.of(context).colorScheme.tertiaryContainer,
+            color: Theme.of(context).colorScheme.tertiaryContainer,
           ),
         ),
     

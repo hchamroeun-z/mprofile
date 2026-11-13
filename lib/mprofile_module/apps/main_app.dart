@@ -24,9 +24,11 @@ class MainApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     bool dark=ref.watch(themeNotifierProvider);
     int index=ref.watch(colorNotifierProvider);
+
     final seedColor=multiColorList[index];
     return MaterialApp(
-       themeMode: dark ? ThemeMode.dark : ThemeMode.light,
+      debugShowCheckedModeBanner: false,
+      themeMode: dark ? .dark : .light,
       theme: ThemeData(
         brightness: Brightness.light,
         colorScheme: ColorScheme.fromSeed(seedColor: seedColor)
@@ -34,8 +36,8 @@ class MainApp extends ConsumerWidget {
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue,
-        brightness: Brightness.dark)),
-      debugShowCheckedModeBanner: false,
+        brightness: Brightness.dark)
+        ),
 
       onGenerateRoute: (settings) {
         switch(settings.name){
