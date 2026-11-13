@@ -4,6 +4,7 @@ import 'package:mprofile/basic_module/color_notifier_provider.dart';
 import 'package:mprofile/basic_module/grid_notifier_provider.dart';
 import 'package:mprofile/basic_module/myapp.dart';
 import 'package:mprofile/basic_module/theme_notifier_provider.dart';
+import 'package:mprofile/mprofile_module/screens/profile_screen.dart';
 
 final gridStyles=[
   Icons.list,
@@ -28,15 +29,30 @@ class _SettingScreenState extends ConsumerState<SettingScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Settings"),
-        foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
-        // backgroundColor: _dark ? Colors.black : Colors.white,
-        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-      ),
+        title: const Text('Settings'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.person,size: 32,),
+            tooltip: 'Profile',
+            padding: const EdgeInsets.all(8.0), 
+            splashRadius: 20.0, 
+            constraints: const BoxConstraints(
+              minWidth: 40.0,
+              minHeight: 40.0,
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const EditProfileScreen()),
+                    );
+                  },
+                ),
+              ],
+            ),
       body: ListView(padding: .all(8), children: [
         _buildDarkSwitch(),
         _buildColorGridView(),
-        _buildGridStyle(),
+        // _buildGridStyle(),
         ]),
     );
   }
@@ -116,4 +132,5 @@ class _SettingScreenState extends ConsumerState<SettingScreen> {
         );
     });
   }
+
 }
